@@ -6,22 +6,107 @@
 
 #include <dt-bindings/led/led.h>
 #include <behaviors/mouse_keys.dtsi>
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        leftparen {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <15 16>;
+        };
+
+        rightparen {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <19 20>;
+        };
+
+        leftbrace {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <4 3>;
+        };
+
+        rightbracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <7 8>;
+        };
+
+        email {
+            bindings = <&kp AT>;
+            key-positions = <6 18>;
+        };
+
+        hash {
+            bindings = <&kp HASH>;
+            key-positions = <18 30>;
+        };
+
+        ampersand {
+            bindings = <&kp AMPS>;
+            key-positions = <5 17>;
+        };
+
+        percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <17 29>;
+        };
+
+        dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <4 16>;
+        };
+
+        star {
+            bindings = <&kp ASTERISK>;
+            key-positions = <16 28>;
+        };
+
+        endash {
+            bindings = <&kp LA(MINUS)>;
+            key-positions = <16 17>;
+        };
+
+        emdash {
+            bindings = <&kp LS(LA(MINUS))>;
+            key-positions = <18 19>;
+        };
+
+        hardspace {
+            bindings = <&kp LA(SPACE)>;
+            key-positions = <28 29>;
+        };
+
+        hyphen {
+            bindings = <&kp MINUS>;
+            key-positions = <30 31>;
+        };
+
+        exclamation {
+            bindings = <&kp EXCL>;
+            key-positions = <27 28>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <31 32>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp TAB          &kp Q  &kp W  &kp E  &kp R           &kp T               &kp Y              &kp U      &kp I      &kp O    &kp P     &kp DELETE
-&lt 1 BACKSPACE  &kp A  &kp S  &kp D  &kp F           &kp G               &kp H              &kp J      &kp K      &kp L    &kp SEMI  &lt 2 SINGLE_QUOTE
-&mkp RCLK        &kp Z  &kp X  &kp C  &kp V           &kp B               &kp N              &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ESCAPE
-                               &mo 4  &kp LEFT_SHIFT  &kp LEFT_COMMAND    &kp RET            &kp SPACE  &mo 4
-                                      &mkp LCLK       &mo 3               &kp LS(LG(SPACE))  &trans
+&kp TAB           &kp Q  &kp W  &kp E  &kp R           &kp T               &kp Y              &kp U      &kp I      &kp O    &kp P     &kp DELETE
+&lt 1 BACKSPACE   &kp A  &kp S  &kp D  &kp F           &kp G               &kp H              &kp J      &kp K      &kp L    &kp SEMI  &lt 2 SINGLE_QUOTE
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V           &kp B               &kp N              &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ESCAPE
+                                &mo 4  &kp LEFT_SHIFT  &kp LEFT_COMMAND    &kp RET            &kp SPACE  &mo 4
+                                       &mkp LCLK       &mo 3               &kp LS(LG(SPACE))  &trans
             >;
         };
 
